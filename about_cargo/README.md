@@ -1,4 +1,5 @@
-#LSPPDay2
+# LSPPDay2
+
 Cargo - Rust's Build system and package manager. Rustaceans use Cargo to manage Rust projects. It handles building codes to downloading and building libraries.  The simplest programs can be built with
 ```rust
 rustc program.rs
