@@ -2,7 +2,12 @@
 Repo for storing projects and concepts I learned progressively in the Rust Programming Language
 
 ### What is Rust?
-Rust is a systems-level general-purpose programming language emphasizing performance, type safety, and concurrency. It is used in various industries as Embedded Systems and IoT, cloud infrastructures, Web3, Systems and Low-level programming, etc. Unlike other languages which either give the user the power to weild the power of memory which is error-prone or maintain a garbage collector which makes the programs slower in run-time, Rust introduces the concept of ownership and borrowing.
+Rust is a systems-level general-purpose programming language emphasizing performance, type safety,
+and concurrency. It is used in various industries as Embedded Systems and IoT, cloud 
+infrastructures, Web3, Systems and Low-level programming, etc. Unlike other languages which either
+give the user the power to weild the power of memory which is error-prone or maintain a garbage
+collector which makes the programs slower in run-time, Rust introduces the concept of ownership 
+and borrowing.
 
 
 Follow along my learning journey with this repository and if you would also like to test the programs provided in this repository, perform the following steps.
@@ -20,4 +25,5 @@ $ cd hello_cargo
 ```bash
 $ cargo run
 ```
-
+I'll also be adding a README.md file to every directory in this repository as the repositories
+will be cargo projects as well.
