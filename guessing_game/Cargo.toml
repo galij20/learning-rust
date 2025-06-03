@@ -5,3 +5,4 @@ edition = "2024"
 
 [dependencies]
 rand = "0.8.5"
+src = "0.0.6"
