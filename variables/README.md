@@ -68,3 +68,14 @@ An example of constant declaration is
 const LEARNING_OR_NOT: bool = true;
 ```
 This snippet of code declares a constant LEARNING_OR_NOT and binds the value true to it.
+
+Shadowing in Rust
+We can declare a new variable with the same name as a previous variable in Rust. The second variable is said to shadow the first variable. After this happens, any mention of the variable in later part of the code will use the value provided in the second declaration.
+We can shadow a variable by using `let` with the same variable name.
+An example can be seen below: 
+```rust
+	let x = 5;
+    println!("Today is not day {x} of learning");
+```
+This initializes a new variable x which shadows the previous x and prints the desired output.
+Compared to making a variable mutable, shadowing helps in creating variables of different data types.
