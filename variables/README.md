@@ -55,4 +55,16 @@ For more information about this error, try `rustc --explain E0384`.
 error: could not compile `variables` (bin "variables") due to 1 previous
  error
 ```
-This error is the result of the variable x or any variable in Rust that is initialized is immutable by nature.
+This error is the result of the variable x or any variable in Rust that is initialized is immutable by nature. Immutability is required for variables that we know won't change values and helps track us such variables. 
+Mutability is also useful though.
+Adding `mut` while initializing a variable indicates that the value bound to the variable might change in the future.
+Running the program after adding the keyword successfully completes and outputs the expected output.
+
+Constants in Rust
+Constants, unlike variables, cannot be made mutable by adding `mut` in it's declaration. They are declared using the keyword `const` instead of `let`.
+
+An example of constant declaration is
+```rust
+const LEARNING_OR_NOT: bool = true;
+```
+This snippet of code declares a constant LEARNING_OR_NOT and binds the value true to it.
