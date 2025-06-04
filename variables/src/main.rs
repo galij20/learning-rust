@@ -9,4 +9,8 @@ fn main(){
     const LEARNING_OR_NOT: bool = true;
     println!("Am I currently learning or not?");
     println!("{LEARNING_OR_NOT}");
+    
+    //shadowing
+    let x = 5;
+    println!("Today is not day {x} of learning");
 }
