@@ -1,13 +1,15 @@
+#![allow(warnings)]
 use std::thread;
 use std::time::Duration;
 
 
 fn main() {
     let v = vec![1, 2, 3];
-
-    let handle = thread::spawn(|| {
-        for i in 1..10 {
-            println!("hi number{i} from the spawned thread!");
+    
+    let handle = thread::spawn(move || {
+        let iterate = v.iter();
+        for val in iterate{
+            println!("Here is the spawned threads: {val}");           
             thread::sleep(Duration::from_millis(100));
         }
     });
