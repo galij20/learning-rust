@@ -4,4 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+arc = "0.0.1"
 fs = "0.0.5"
+mpsc = "0.2.6"
+mutex = "1.0.2"

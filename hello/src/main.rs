@@ -1,3 +1,4 @@
+use hello::ThreadPool;
 use std::{
     fs,
     io::{BufReader, prelude::*},
@@ -5,18 +6,20 @@ use std::{
     thread,
     time::Duration,
 };
-use hello::ThreadPool;
+
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
     let pool = ThreadPool::new(4);
 
-    for stream in listener.incoming() {
+    for stream in listener.incoming().take(3) {
         let stream = stream.unwrap();
 
         pool.execute(|| {
             handle_connection(stream);
         });
     }
+
+    println!("Shutting down.");
 }
 
 fn handle_connection(mut stream: TcpStream) {
@@ -32,7 +35,7 @@ fn handle_connection(mut stream: TcpStream) {
         _ => ("HTTP/1.1 404 NOT FOUND", "404.html"),
     };
 
-    let contents = fs::read_to_string(filename).unwrap();
+    let contents = fs::read_to_string(filename).unwrap_or_else(|_| String::from("File not found"));
     let length = contents.len();
 
     let response =
